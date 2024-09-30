@@ -14,7 +14,7 @@ const Navbar = () => {
             {/* {searchbar} */}
             <div className='flex items-center gap-8'>
                 {!isSidebarCollapsed ? null : (
-                    <button onClick={() => dispatch(setIsSidebarCollapsed(isSidebarCollapsed))}>
+                    <button onClick={() => dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))}>
                         <Menu className='h-8 w-8 dark:text-white' />
                     </button>
                 )}

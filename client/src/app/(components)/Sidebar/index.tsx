@@ -10,9 +10,11 @@ import React, { useState } from 'react'
 const Sidebar = () => {
     const [showProjects, setShowProjects] = useState(true)
     const [showPriority, setShowPriority] = useState(true)
+    const dispatch = useAppDispatch()
+    const isSidebarCollapsed = useAppSelector((state) => state.global.isSidebarCollapsed)
 
     const sidebarClassNames = `fixed flex flex-col h-[100%] justtify-between shadow-xl transition-all 
-    duration-300 h-full z-40 dark:bg-black overflow-y-auto bg-white w-64`
+    duration-300 h-full z-40 dark:bg-black overflow-y-auto bg-white ${isSidebarCollapsed ? 'w-0 hidden' : 'w-64'}`
   return (
     <div className={sidebarClassNames}>
         <div className='flex h-[100%] w-full flex-col justify-start'>

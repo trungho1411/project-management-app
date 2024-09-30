@@ -1,6 +1,6 @@
 'use client'
 
-import { LockIcon } from 'lucide-react'
+import { Icon, LockIcon, LucideIcon } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -22,7 +22,7 @@ const Sidebar = () => {
             {/* {tema} */}
             <div className='flex items-center gap-5 border-y-[1.5px] border-gray-200 px-8 py-4 dark:border-gray-700'>
                 <Image 
-                src='/logo.svg'
+                src='/avatar_portrait.jpg'
                 width={40}
                 height={40}
                 alt='Logo'
@@ -41,6 +41,22 @@ const Sidebar = () => {
         </div>
     </div>
   )
+}
+
+interface SidebarLinkProps {
+    href: string;
+    icon: LucideIcon;
+    label: string;
+    isCollapsed: boolean;
+}
+
+const SidebarLink = ({
+    href,
+    icon: Icon,
+    label,
+    isCollapsed
+} : SidebarLinkProps) => {
+    
 }
 
 export default Sidebar
